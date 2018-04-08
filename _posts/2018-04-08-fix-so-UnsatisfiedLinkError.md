@@ -27,12 +27,10 @@ date: 2018-04-08T11:37:22+08:00
 看到这个报错第一反应就是.so库没有添加到工程里面，但是发现libs下面已经添加了这个库。
 进一步查看这个问题，想到是不是Gradle配置导致了so库没有编译进apk中导致的，将打包好的apk解压发现如下的目录：
 
-{% highlight html %}
 <figure class="half center">
 	<img src="/images/20180408114215.png" alt="">
 	<figcaption>lib下的目录</figcaption>
 </figure>
-{% endhighlight %}
 
 发现里面有两个目录：
 
@@ -42,21 +40,17 @@ date: 2018-04-08T11:37:22+08:00
 而opencv_java3这个库存在于armeabi，armeabi-v7a中并没有，具体如下：
 armeabi目录：
 
-{% highlight html %}
 <figure class="half center">
 	<img src="/images/20180408115435.png" alt="">
 	<figcaption>armeabi目录</figcaption>
 </figure>
-{% endhighlight %}
 
 armeabi-v7a目录内容：
 
-{% highlight html %}
 <figure class="half center">
 	<img src="/images/20180408115628.png" alt="">
 	<figcaption>armeabi-v7a目录</figcaption>
 </figure>
-{% endhighlight %}
 
 <!--more-->
 
