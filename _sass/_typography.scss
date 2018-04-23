@@ -110,11 +110,12 @@ li {
 	}
 }
 pre {
-	@include font-rem(12);
+	@include font-rem(16);
 	line-height: 1.5;
 	overflow-x: auto;
+	font-family: $code-font;
 	&::-webkit-scrollbar {
-		height: 12px;
+		height: 8px;
 		background-color: #34362e;
 		border-radius: 0 0 4px 4px;
 	}
