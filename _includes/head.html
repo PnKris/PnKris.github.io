@@ -2,7 +2,9 @@
 <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+    <meta name="applicable-device" content="pc,mobile"/>
 
+    <meta http-equiv="Cache-Control" content="no-transform"/>
 {% if site.owner.twitter or site.twitter %}<!-- Twitter Cards -->
 {% if page.image.feature %}<meta name="twitter:card" content="summary_large_image">
 {% else %}<meta name="twitter:card" content="summary">{% endif %}
