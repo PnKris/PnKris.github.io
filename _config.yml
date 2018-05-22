@@ -1,4 +1,4 @@
-title:            Kris小站
+title:            木头的小木屋
 description:      只有你自己可以改变自己,对的事,天天做
 # put your disqus here
 disqus_shortname:
@@ -19,8 +19,8 @@ url: http://imetux.com
 menu:
   - title: '首页'
     url: '/'
-  - title: '标签'
-    url: '/tags'
+  # - title: '标签'
+  #   url: '/tags'
   - title: '分类'
     url: '/categories'
     # type: 'categories'
@@ -31,14 +31,14 @@ menu:
   #       url: '/intro/code-highlighting-post/'
   #     - title: 'Sample Post'
   #       url: '/intro/sample-post/'
-  - title: '关于'
-    url: '/about'
+  # - title: '关于'
+  #   url: '/about'
   - title: '优质站点'
     url: '/sites'
     
 # Owner/author information
 owner:
-  name:           不懂先生Kris
+  name:           木头
   site:           http://imetux.com
   avatar:         images/avatar.jpg
   bio:            "一个喜欢捣鼓产品的Android开发"
