@@ -2,7 +2,7 @@
 layout: post
 title: Android APP运行时报so库加载失败
 modified:
-categories: 
+categories: Android
 description:
 tags: [Android]
 image:
