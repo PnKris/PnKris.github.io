@@ -10,6 +10,7 @@ share: true
 
 [技术小黑屋](https://droidyue.com)
 
+[巴巴巴巴巴巴掌](https://www.wangyuwei.me)
 
 [Leo Tse](http://leotse90.com/)
 
