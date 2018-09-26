@@ -1,49 +1,54 @@
 ---
-sitemap: false
 ---
-
-/*
- *
- *  HPSTR
- *
- *  Designer: Michael Rose
- *  Twitter: http://twitter.com/mmistakes
- *
-*/
-
-// Partials
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "vendor/font-awesome/font-awesome";
-@import "vendor/magnific-popup/magnific-popup";
-@import "site";
-@import "typography";
-@import "rouge";
-@import "coderay";
-@import "grid";
-@import "elements";
-@import "animations";
-@import "dl-menu";
-@import "page";
+// CSS Style Guide: http://codeguide.co/#css
 
 
-::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+
+$scheme    : '{{ site.scheme | default: Muse }}';
+$variables : base $scheme custom;
+$mixins    : base $scheme custom;
+
+
+{% include _helper/config_map.html %}
+$jekyll-config-map : {{ config_map }};
+
+@function jekyll-config($key) {
+  @return map-get($jekyll-config-map, $key);
 }
 
-::-webkit-scrollbar
-{
-	width: 5px;
-	background-color: #F5F5F5;
-}
+// Variables Layer
+// --------------------------------------------------
+@import "_variables/base";
+@import "_variables/{{ site.scheme | default: Muse }}";
+@import "_variables/custom";
 
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
-}
+// Mixins Layer
+// --------------------------------------------------
+@import "_mixins/base";
+@import "_mixins/{{ site.scheme | default: Muse }}";
+@import "_mixins/custom";
+
+
+
+// Common Layer
+// --------------------------------------------------
+
+// Scaffolding
+@import "_common/scaffolding/scaffolding";
+
+// Layout
+@import "_common/outline/outline";
+
+// Components
+@import "_common/components/components";
+
+
+// Schemes Layer
+// --------------------------------------------------
+@import "_schemes/{{ site.scheme | default: Muse }}/index";
+
+
+
+// Custom Layer
+// --------------------------------------------------
+@import "_custom/custom";

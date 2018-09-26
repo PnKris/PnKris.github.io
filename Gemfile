@@ -1,6 +1,8 @@
-source "https://rubygems.org"
-
-gem 'octopress'
+source 'https://rubygems.org'
+# gem 'github-pages', group: :jekyll_plugins
+gem 'jekyll-admin', group: :jekyll_plugins
 gem 'jekyll-paginate'
-gem 'neo-hpstr-jekyll-theme'
-gem 'tzinfo-data'
+gem 'jekyll-feed'
+gem 'jemoji'
+gem 'jekyll-sitemap'
+gem 'jekyll-gist'
