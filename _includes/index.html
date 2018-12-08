@@ -1,8 +1,22 @@
-{% assign posts = site.posts %}
-{% if site.paginate > 0 %}{% assign posts = paginator.posts %}{% endif %}
+
+
+
+{% assign all_posts = "" | split: "" %}
+{% for article in site.article %}
+    {% assign all_posts = all_posts | push: article %}
+{% endfor %}
+{% for post in site.posts %}
+    {% assign all_posts = all_posts | push: post %}
+{% endfor %}
+{% assign all_posts = all_posts | sort: date | reverse %}
+
+
+
+{% if site.paginate > 0 %}{% assign all_posts = paginator.all_posts %}{% endif %}
+
 
 <section id="posts" class="posts-expand">
-  {% for post in posts %}
+  {% for post in all_posts %}
     {% assign is_index = true %}
     {% include _macro/post.html %}
   {% endfor %}

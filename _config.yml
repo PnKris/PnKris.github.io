@@ -49,6 +49,11 @@ markdown: kramdown
 kramdown:
     input: GFM
 
+
+collections:
+  article:
+    output: true
+
 # Default Attributes
 ## Docs: https://jekyllrb.com/docs/configuration/#front-matter-defaults
 defaults:
@@ -56,6 +61,13 @@ defaults:
     scope:
       path: ""
       type: "posts"
+    values:
+      layout: "post"
+      comments: true
+  - 
+    scope:
+      path: "_article"
+      type: "article"
     values:
       layout: "post"
       comments: true
