@@ -1,6 +1,5 @@
 ---
 layout: page
-title: "A list of animals"
 permalink: "/animals/"
 ---
 
@@ -9,6 +8,9 @@ permalink: "/animals/"
     <li>
       <a href="{{ animal.url }}">{{ animal.title }}</a>
       - {{ animal.headline }}
+
+      {% include _macro/post.html %}
     </li>
   {% endfor %}
 </ul>
+
