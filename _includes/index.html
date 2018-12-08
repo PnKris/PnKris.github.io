@@ -1,8 +1,8 @@
-{% assign article = site.article %}
-{% if site.paginate > 0 %}{% assign article = paginator.article %}{% endif %}
+{% assign posts = site.posts %}
+{% if site.paginate > 0 %}{% assign posts = paginator.posts %}{% endif %}
 
 <section id="posts" class="posts-expand">
-  {% for article in article %}
+  {% for post in posts %}
     {% assign is_index = true %}
     {% include _macro/post.html %}
   {% endfor %}
