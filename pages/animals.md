@@ -9,7 +9,7 @@ permalink: "/animals/"
       <a href="{{ animal.url }}">{{ animal.title }}</a>
       - {{ animal.headline }}
 
-      {% include _macro/post.html %}
+      {{ animal.content }}
     </li>
   {% endfor %}
 </ul>
