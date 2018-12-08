@@ -66,7 +66,7 @@ defaults:
       comments: true
   - 
     scope:
-      path: "_article"
+      path: "_posts/_article"
       type: "article"
     values:
       layout: "post"
