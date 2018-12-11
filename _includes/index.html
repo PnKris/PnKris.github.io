@@ -11,7 +11,9 @@
 {% assign posts = all_posts %}
 {% if site.paginate > 0 %}{% assign posts = paginator.posts %}{% endif %}
 
+测试一些内容
 <section id="posts" class="posts-expand">
+
   {% for post in posts %}
     {% assign is_index = true %}
     {% include _macro/post.html %}
