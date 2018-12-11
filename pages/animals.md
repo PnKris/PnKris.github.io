@@ -3,12 +3,15 @@ layout: page
 permalink: "/animals/"
 ---
 
-{% for animal in site.animals %}
-    
-      <a href="{{ animal.url }}">{{ animal.title }}</a>
-	
-      {{ animal.content }}
-    
-{% endfor %}
 
+<ul>
+  {% for animal in site.animals %}
+    <li>
+   <h1>   <a href="{{ animal.url }}">{{ animal.title }}</a>
+      - {{ animal.headline }}
+</h1>
+      {{ animal.content }}
+    </li>
+  {% endfor %}
+</ul>
 
