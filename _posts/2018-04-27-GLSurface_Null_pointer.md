@@ -5,7 +5,8 @@ modified:
 categories: Android
 tags: [Android, GLSurfaceView]
 share:
-date: 2018-04-27T11:49:21+08:00
+catalog: true
+date: 2018-04-27
 ---
 
 直接使用GLSurfaceView的时候遇到了在GLSurfaceView内部报空指针异常。
