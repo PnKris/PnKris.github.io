@@ -5,7 +5,7 @@ modified:
 categories: Android
 tags: [Android, GLSurfaceView]
 share:
-catalog: true
+catalog: false
 date: 2018-04-27
 ---
 
