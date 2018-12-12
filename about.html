@@ -1,0 +1,173 @@
+---
+layout: page
+title: "About"
+description: "Hey, this is YoungChen."
+header-img: "img/about_bg.jpg"
+---
+<style>
+select {
+    -webkit-appearance: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #337ab7;
+    border-color: #337ab7;
+    padding: 0 .4em;
+    background: #fff;
+}
+</style>
+<div class="row" style="display:none">
+<!-- Language Selector -->
+    <select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+        <option value="0"> 中文 Chinese </option>
+        <option value="1" selected> 英文 English </option>
+    </select>
+</div>
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+    <p>Hi，一般我上别人的主站，优先都会看 About me，不知道屏幕前的你是不是这样。
+        然而可惜的是，大部分程序员只想写干货技术文，轮到介绍自己的时候总是字数寥寥，
+        其实我觉得让别人知道你是一个怎样的人，是一件同等重要的事。
+    </p>
+    <p>如果你愿意，你可以叫我 Young，因为我名字最后一个字是飞扬的 🐑 ，出生在九五年的尾巴，毕业于一八年夏天。有着一颗喜欢音乐的心，却学了十年美术，
+        专攻国画，不少人问过我什么是国画，说真的我不知道怎么回答，因为...8012年了，居然还有人不知道国画是什么！？绘画的天分不足以
+        支撑艺术梦想，只好回退参加高考进入东川路男子技校学习程序员专业，业余时间辅修了法学，现在也快忘得差不多了。好在 Geek 属性点亮得很快，虽然起步晚注定已经比不上很多大牛，但是勤能补拙，
+        在笨鸟群里不算是落在最后的，心有慰藉。
+    </p>
+    <p>我呢，性子里有安静的一面，也有锋利的一面，一般来说我把后者隐藏得很好，人生前二十二年几乎没有在人前显露过，
+        所以生活中我是个很好相处的人。喜欢买书，书永远是买得比看得多，一般来说看书只会挑着内容看，不会从头看到尾，除非
+        是小说书、旅游书... 女歌手中欣赏 Hebe，喜欢泰妍，如果有机会一定会去看两人的演唱会。资深足球迷，梦想带着女儿去看世界杯或者
+        欧洲杯。
+    </p>
+    <p>工作上，如果有可能的话，喜欢一切事情都面对面交流，崇尚效率，对代码有一点强迫症，特别是英文拼写，命名规范，必要注释，代码复用四个方面。
+        维护糟糕的历史代码会让我很烦躁，建议重写一个。感兴趣的方向是分布式系统/存储，目前工作是 Redis 强相关。虽说一如既往是个技术菜鸟，但是有一颗成长为大神的心，目标成为一个全栈工程师，
+        尊敬并热爱开源精神，希望将来能为开源项目做出丁点贡献。
+    </p>
+    <p>此博客建于一四年十月份，创建初衷是觉得生活中的美好总是稍纵即逝，故开此博客，记录那些值得被回忆的岁月。
+        从最初的 WordPress 到如今的 Github Pages 几经变革，大三下之后博客才迎来稳定更新，如果这篇长文你已经看到了这里，
+        那说明你跟我一样挺闲的... HH开个玩笑，目前看来，我必将暂时处于且长期处于学习初级阶段，征途漫漫，期待与每一个
+        逐梦路上的同学一起进步。
+    </p>
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+{% if site.livere_userid %}
+<div class="comment">
+    <div id="lv-container" data-id="city" data-uid="{{site.livere_userid}}"></div>
+</div>
+<!-- 来必力City版安装代码 -->
+<script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+<!-- City版安装代码已完成 -->
+{% endif %}
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "huxblog" %}
+        data-thread-id="1187623191091085319"
+    {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}

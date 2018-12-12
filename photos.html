@@ -1,0 +1,62 @@
+---
+layout: default
+title: "Photos"
+description: 世界那么大，总要去看看
+header-img: "img/photo.jpg"
+---
+<head>
+    <link rel="stylesheet" href="/css/amazeui.min.css">
+</head>
+<style>
+    #tag-heading.photo {
+        padding: 70px 0 60px;
+    }
+    @media only screen and (min-width: 768px) {
+        #tag-heading.photo {
+            padding: 120px 0;
+        }
+    }
+    .carousel-inner > .item > a > img,
+    .carousel-inner > .item > img {
+        width: 100%;
+        height: auto;
+    }
+
+</style>
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading photo" id="tag-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    
+<div class="container">
+    <div class="row" ng-app="blogSystem" ng-controller="PhotoController">
+        <div class="col-md-10 col-md-offset-1">
+            <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2 am-avg-md-3 am-avg-lg-4 am-gallery-imgbordered" data-am-gallery="{  }" >
+                {% for photo in site.photos %}
+                    <li>
+                        <div class="am-gallery-item">
+                            <a href="{{photo.url}}" class="">
+                                <img src="{{photo.url}}"  alt="{{photo.title}}"/>
+                                <h3 class="am-gallery-title">{{photo.title}}</h3>
+                                <div class="am-gallery-desc">{{photo.date}} 摄于<i class="fa fa-map-marker" aria-hidden="true"></i>{{photo.location}}</div>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/amazeui.min.js"></script>
+
+    
