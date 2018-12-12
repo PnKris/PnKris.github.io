@@ -2,9 +2,10 @@
 layout: post
 title: Android录屏之简单录屏
 modified:
-categories: Android
+categories: 
 tags: [Android, MediaCodec, 音视频]
 share:
+category: true
 date: 2018-04-25T11:09:21+08:00
 ---
 
