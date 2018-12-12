@@ -77,7 +77,6 @@ public void setRenderer(Renderer renderer) {
 {% endhighlight %}
 原来是画面加载的时候去调用渲染，但是布局里面没有设置渲染器所以就崩了。
 
-<!--more-->
 
 2.使用
 网上常见的GLSurfaceView使用方法
