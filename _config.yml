@@ -3,19 +3,19 @@ title: 旧·时光 | Time
 SEOTitle: 旧·时光 | YoungChen's Blog
 header-img: img/bg1.jpg
 email: Chen.Jiayang@foxmail.com
-description: "Something that stays in your mind will someday spring up in your life."
-keyword: "博客,Java,Redis,Spring,分布式系统"
-url: "http://chenjiayang.me"              # your host, for absolute URL
+description: "越自律,越自由"
+keyword: "博客,Java,Android,算法,framework"
+url: "http://yuupo.tk"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # SNS settings
 RSS: true
-weibo_username:     u/3284056213
-zhihu_username:     EasonChen_7
-github_username:    jiayangchen
+# weibo_username:     u/3284056213
+# zhihu_username:     EasonChen_7
+# github_username:    jiayangchen
 #facebook_username:  jiayangchen
-linkedin_username:  嘉扬-陈-04463a117
-csdn_username: chen_kkw
+# linkedin_username:  嘉扬-陈-04463a117
+# csdn_username: chen_kkw
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
