@@ -8,6 +8,7 @@ share:
 catalog: false
 date: 2018-04-27
 ---
+#### 崩溃日志
 
 直接使用GLSurfaceView的时候遇到了在GLSurfaceView内部报空指针异常。
 
