@@ -5,7 +5,7 @@ modified:
 categories: Android
 tags: [Android, GLSurfaceView]
 share:
-catalog: false
+catalog: true
 date: 2018-04-27
 ---
 #### 崩溃日志
