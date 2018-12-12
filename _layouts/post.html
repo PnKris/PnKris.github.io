@@ -82,10 +82,14 @@ layout: default
                 </ul>
             </div>  
 
+            
+            <!-- Side Catalog Container -->
+        
             <div class="
                 col-lg-2 col-lg-offset-0
                 visible-lg-block
-                sidebar-container">
+                sidebar-container
+                catalog-container">
 
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
@@ -104,26 +108,7 @@ layout: default
                 </section>
                 {% endif %}
 
-                <!-- Friends Blog -->
-                {% if site.friends %}
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
-
-
-    <!-- Side Catalog Container -->
-        {% if page.catalog %}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
+                {% if page.catalog %}
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
@@ -131,10 +116,10 @@ layout: default
                     </h5>
                     <ul class="catalog-body"></ul>
                 </div>
+                {% endif %}
             </div>
-        {% endif %}
 
-    <!-- Sidebar Container -->
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
