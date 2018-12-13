@@ -26,16 +26,10 @@ category: 序列化
             <!-- 类别 -->
 
 			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="{{ category[0] }}">
-                    <span class="tag-text">{% if page.description %}{{ page.description }}{% else %}{{ page.category }}{% endif %}</span>
-                </span>
 	            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
 	                {% assign posts = site.posts | where: "categories", page.category %}
 					{% for post in posts %}
-					  <!-- <li class="listing-item">
-					  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-					  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-					  </li> -->
+
 					  <div class="post-preview">
 					    <a href="{{ post.url | prepend: site.baseurl }}">
 					        <h2 class="post-title">
@@ -50,9 +44,7 @@ category: 序列化
 					            {{ post.content | strip_html | truncate:200 }}
 					        </div>
 					    </a>
-					    <p class="post-meta">
-					        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-					    </p>
+					    
 					</div>
 					<hr>
 					{% endfor %}
