@@ -5,7 +5,7 @@ modified:
 categories: 
 tags: [Android, MediaCodec, 音视频]
 share:
-category: true
+catalog: true
 date: 2018-04-25T11:09:21+08:00
 ---
 
