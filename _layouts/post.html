@@ -10,7 +10,7 @@ layout: default
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('{{ site.header-img }}')
+        background-image: url('{% if page.header-img %}{{ site.baseurl }}/{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
 
     {% if page.header-mask %}
