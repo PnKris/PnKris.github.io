@@ -3,9 +3,9 @@ layout: post
 title: Zygote Fork 过程
 categories: [Android, framwork源码]
 tags: [Zygote]
+catalog: true
 date: 2018-04-27
 ---
-
 #### Zygote Fork 过程
 
 这个流程算是一个承上启下的流程,难度不大,但是可以让我们了解到,从其他APP打开一个新的app的过程中,如何进行zygote的fork的,知道一个新的APP打开的入口在什么地方.
