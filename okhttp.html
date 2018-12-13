@@ -26,9 +26,9 @@ category: 序列化
             <!-- 类别 -->
 
 			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="{{ category[0] }}">
+			  	<!-- <span class="fa fa-tag listing-seperator" id="{{ category[0] }}">
                     <span class="tag-text">{% if page.description %}{{ page.description }}{% else %}{{ page.category }}{% endif %}</span>
-                </span>
+                </span> -->
                 {% assign posts = site.posts | where: "categories", page.category %}
 				{% for post in posts %}
 				  <!-- <li class="listing-item">
