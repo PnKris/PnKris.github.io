@@ -1,18 +1,28 @@
 ---
 layout: post
-title: Android录屏实现
-categories: Android
+title: Android录屏之简单录屏
+modified:
+categories: 
 tags: [Android, MediaCodec, 音视频]
-date: 2018-04-23
+share:
+catalog: true
+date: 2018-04-25T11:09:21+08:00
 ---
 
-在Android上进行录屏的方案会有很多，比如直接使用mediarecorder结合MediaProjection或者采用mediaCodec进行编码录制等等, 网上也有很多相关的文章介绍，本文讲述的录制方案比较常见，采用了MediaProjection、mediacodec、mediamuxer进行录制。
+最近项目里面用到了录屏的功能，前后折腾了一周时间，终于将录屏功能彻底搞出来了，基本上了解了音视频的录制， 帧率的控制，利用mediacodec进行音视频的编码，音视频时间戳的同步问题。本文作为这个Android录屏系列文章的开篇主要大致讲一下录屏的大致流程，包含哪些功能。
 
-#### 介绍
+#### 简介
 
-既然我们要采用MediaProjection、mediacodec、mediamuxer进行屏幕录制，那么我们就需要知道这些东西是干什么的。
-MediaProjection是一个屏幕采集接口，在Android5.0上才开放出来，在这之前可以使用DisplayManager，不过需要root。（我们公司的盒子上是4.4,由于是系统应用所以公司项目里采用的是DisplayManager来实现的）
-mediacodec就是会把屏幕数据进行编码，然后输出给MediaMuxer进行混合打包成视频文件。
+对于录屏功能，通常会包含几个方面，视频的录制与编码，音频的录制与编码，音视频混合打包成mp4文件。
+我们将每个步骤拆开：
+获取视频帧     将视频帧丢到编码器里面编码   得到编码后的数据丢给混合器混合
+获取音频数据   将音频数据丢到编码器里面编码   得到编码后的数据丢给混合器混合
+
+其中需要注意一点的就是：
+1、控制帧率的问题：由于编码好的视频帧丢弃会导致一些乱七八糟的问题，所以我们只能够控制编码器输入的视频帧，
+2、音视频的同步问题，控制视频帧与音频帧的同步，防止发生一些视频播放完了，声音还在播放什么的一些问题
+
+
 
 #### 实现
 
