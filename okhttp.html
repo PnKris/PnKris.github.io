@@ -2,6 +2,7 @@
 title: OKHttp详解
 layout: default
 description: OKHttp详解系列文章
+category: 序列化
 ---
 
 <!-- Page Header -->
@@ -23,25 +24,14 @@ description: OKHttp详解系列文章
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- 类别 -->
-			<div id='tag_cloud' class="tags">
-				{% for category in site.categories.序列化  %}
-				<a href="#{{ category[0] }}" title="{{ category[0] }}" rel="{{ category[1].size }}">{{ category[0] }}</a>
-				{% endfor %}
-			</div>
-
-            <!--<blockquote class="tag-comments">
-                标签命名规范：
-                    <li>行业观察、职位、公司优先使用中文</li>
-                    <li>外国产品、术语优先使用英文</li>
-            </blockquote>-->
-
-            <!-- 类别 -->
 			{% for category in site.categories %}
 			<div class="one-tag-list">
 			  	<span class="fa fa-tag listing-seperator" id="{{ category[0] }}">
                     <span class="tag-text">{{ category[0] }}</span>
                 </span>
-				{% for post in category[1] %}
+
+            	{% assign posts = site.posts | where: "categories", "序列化" %}
+				{% for post in posts %}
 				  <!-- <li class="listing-item">
 				  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
 				  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
