@@ -24,13 +24,13 @@ category: 序列化
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- 类别 -->
-			{% for category in site.categories %}
+
 			<div class="one-tag-list">
 			  	<span class="fa fa-tag listing-seperator" id="{{ category[0] }}">
                     <span class="tag-text">{{ category[0] }}</span>
                 </span>
 
-            	{% assign posts = site.posts | where: "categories", "序列化" %}
+            	{% assign posts = site.posts | where: "categories", page.category %}
 				{% for post in posts %}
 				  <!-- <li class="listing-item">
 				  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -52,7 +52,6 @@ category: 序列化
 				<hr>
 				{% endfor %}
 			</div>
-			{% endfor %}
 
 		</div>
 	</div>
