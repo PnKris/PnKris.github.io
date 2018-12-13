@@ -186,3 +186,9 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 #         location: "上海博物馆"
 #     }
 # ]
+
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
