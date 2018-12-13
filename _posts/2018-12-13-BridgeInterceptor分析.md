@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Zygote Fork ¹ý³Ì
-categories: [Android, framworkÔ´Âë]
-tags: [Zygote]
+title: BridgeInterceptor分析
+categories: [Android, okhttp]
+tags: [okhttp]
 catalog: true
 date: 2018-12-13
 ---
