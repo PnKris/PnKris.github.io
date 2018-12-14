@@ -1,0 +1,138 @@
+---
+layout: post
+title: Request类分析
+categories: [Android, okhttp]
+tags: [okhttp]
+catalog: true
+date: 2018-12-14
+---
+### 前言
+从上一篇文章 [OkHttpClient分析](https://yuupo.tk/android/okhttp/OkHttpClient%E5%88%86%E6%9E%90/)中我们知道，在发起一个请求的时候，我们需要构建一个Request,这篇文章我们来分析一下Request类中有哪些东西。
+
+#### Request Builder
+Request对象的构建也是一个建造者模式，我们先看一下Builder中有几个东西
+
+```java
+public static class Builder {
+    private HttpUrl url;
+    private String method;
+    private Headers.Builder headers;
+    private RequestBody body;
+    private Object tag;
+
+    ......
+    public Builder method(String method, RequestBody body) {
+        if (method == null) throw new NullPointerException("method == null");
+        if (method.length() == 0) throw new IllegalArgumentException("method.length() == 0");
+        if (body != null && !HttpMethod.permitsRequestBody(method)) {
+            throw new IllegalArgumentException("method " + method + " must not have a request body.");
+        }
+        if (body == null && HttpMethod.requiresRequestBody(method)) {
+            throw new IllegalArgumentException("method " + method + " must have a request body.");
+        }
+        this.method = method;
+        this.body = body;
+        return this;
+    }
+    ....
+    
+    public Request build() {
+      if (url == null) throw new IllegalStateException("url == null");
+      return new Request(this);
+    }
+}
+```
+我们在创建一个Request的时候只能通过这个Builder去构建。需要提供下面几个参数：
+
+> - url
+
+url可以是String,也可以是HttpUrl对象，当我们传入String类型的url时，Builder.url(String)这个方法会帮我们自动封装成HttpUrl对象，并赋值。
+
+> - method
+
+String类型，支持GET, HEAD, POST, DELETE, PUT, PATCH等等各种http请求类型
+
+> - headers
+
+Headers.Builder类型，请求头信息，可以通过header, addHeader, removeHeader, headers，对于请求头进行修改
+
+> - body
+
+RequestBody类型，RequestBody是个抽象类，对于需要body的请求，需要我们自己实现一个RequestBody,OkHttp提供了一些Body类供我们使用。
+
+> - tag
+
+Object类型，用于我们在cancel 一些请求。
+
+
+#### RequestBody分析
+
+抽象类，提供了一些create方法用于创建一个RequestBody对象，当然我们也可以自己继承一个RequestBody来定制自己的RequestBody。
+简化后的代码如下
+
+```java
+public abstract class RequestBody {
+    public abstract MediaType contentType();
+    
+    public long contentLength() throws IOException {
+        return -1;
+    }
+    
+    public abstract void writeTo(BufferedSink sink) throws IOException;
+    
+    public static RequestBody create(MediaType contentType, String content) {
+        ....
+    }
+    
+    public static RequestBody create(final MediaType contentType, final ByteString content) {
+        ....
+    }
+    
+    public static RequestBody create(final MediaType contentType, final byte[] content) {
+        ....
+    }
+    
+    /** Returns a new request body that transmits {@code content}. */
+    public static RequestBody create(final MediaType contentType, final byte[] content,
+          final int offset, final int byteCount) {
+        ......  
+    }
+    
+    //这个方法，我们在做表单提交的时候还是很有帮助的，会经常用到
+    public static RequestBody create(final MediaType contentType, final File file) {
+        ......
+    }
+}
+
+```
+#### RequestBody子类MultipartBody
+
+MultipartBody 表单类型的RequestBody，可以同时提交字段和文件的这种body。
+
+用法：（一个上传文件的表单提交）
+```java
+    OkHttpClient client = new OkHttpClient();
+    //文件对象
+    File file = new File("");
+    //构建一个文件的RequestBody
+    RequestBody fileBody = RequestBody.create(MediaType.parse(""), file);
+    //构建一个表单body
+    MultipartBody multipartBody = new MultipartBody.Builder().addFormDataPart("field", "filename", fileBody).build();
+    //构建一个请求
+    Request request = new Request.Builder().post(multipartBody).url("").build();
+    Call call = client.newCall(request);
+    call.enqueue(new Callback() {
+        @Override
+        public void onFailure(Call call, IOException e) {
+        }
+
+        @Override
+        public void onResponse(Call call, Response response) throws IOException {
+
+        }
+    });
+```
+
+总结:
+Request类中包含了我们发起请求的所有的信息，内部帮我们封装好了很多东西，通过简单的方法调用就能够完成http请求信息的构建。下一篇分析Call。
+
