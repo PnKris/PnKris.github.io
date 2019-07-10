@@ -1,5 +1,5 @@
-<script>
-function strTest(str){
-  return str;
-}
-</script>
+<script type="text/javascript">
+            function strTest(param){
+                 return param;
+            }
+        </script>
