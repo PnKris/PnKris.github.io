@@ -2,7 +2,13 @@
 	"errorcode": "0",
 	"msg": "",
 	"data": {
-		"id": 1,
-		"name": "Yuupo"
+		"apkMd5":"4ab37a4655dc62995fe9ba8238088bf7",
+		"apkUrl":"http://gdown.baidu.com/data/wisegame/55dc62995fe9ba82/jinritoutiao_448.apk",
+    		"versionCode":"201911271",
+    		"channel":"default",
+    		"pkgName":"net.zhihuimai.mall",
+   		"message":"应用升级啦\n1、新增商品举报功能\n2、精心调整了整个app的UI,看着更舒服了\n3、进一步优化了整个APP的性能，用起来更流畅\n4、最后肯定少不了修改了一些莫名其妙的bug啦",
+    		"isForce":true,
+    		"needUpdate":true
 	}
 }
