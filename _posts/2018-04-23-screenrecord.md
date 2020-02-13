@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Android录屏实现
 categories: Android
 tags: [Android, MediaCodec, 音视频]

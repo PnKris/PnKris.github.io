@@ -1,5 +1,4 @@
 ---
-layout: post
 title: BridgeInterceptor分析
 categories: [Android, okhttp]
 tags: [okhttp]

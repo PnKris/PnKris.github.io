@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Android APP运行时报so库加载失败
 categories: Android
 tags: [Android]

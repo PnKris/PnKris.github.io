@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GLSurfaceView内部报空指针问题
 modified:
 categories: Android

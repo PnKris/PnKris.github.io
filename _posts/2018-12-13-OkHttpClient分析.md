@@ -1,5 +1,4 @@
 ---
-layout: post
 title: OkHttpClient分析
 categories: [Android, okhttp]
 tags: [okhttp]

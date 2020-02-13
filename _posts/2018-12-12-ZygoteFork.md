@@ -1,5 +1,4 @@
 ﻿---
-layout: post
 title: Zygote Fork 过程
 categories: [Android, framwork源码]
 tags: [Zygote]
