@@ -1,4 +1,9 @@
 
+{%- include snippets/assign.html
+  target=site.data.variables.default.page.show_subscribe
+  source0=layout.show_subscribe source1=page.show_subscribe -%}
+{%- assign _show_subscribe = __return -%}
+
 <footer class="footer py-4 js-page-footer">
   <div class="main">
 
@@ -32,7 +37,8 @@
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
 
-        
+
+
         {%- if _show_subscribe -%}
           <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
         {%- endif -%}
