@@ -32,9 +32,10 @@
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
 
-          {%- if site.title -%}
-            <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}</a>
-          {%- endif -%}
+        
+        {%- if _show_subscribe -%}
+          <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
+        {%- endif -%}
       </div>
     </div>
   </div>
