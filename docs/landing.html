@@ -11,14 +11,14 @@ article_header:
       type: error
       url: /docs/en/quick-start
     - text: Demo
-      type: outline-info
+      type: outline-theme-dark
       url: /test/
   height: 100vh
   theme: dark
-  background_color: "#111"
+  background_color: "#367a9a"
   background_image:
-    gradient: "linear-gradient(rgba(240, 0, 150, .4), rgba(104, 0, 208 , .4))"
-    src: /docs/assets/images/cover2.jpg
+    gradient: "linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .6))"
+    src: /docs/assets/images/cover4.jpg
 data:
   sections:
     - title: Fully Responsive
@@ -34,7 +34,6 @@ data:
           url: /samples.html
         - text: Learn More
           url: /docs/en/configuration
-      background_color: transparent
       image:
         src: /screenshots/TeXt-layouts.png
         is_row: true
@@ -42,22 +41,25 @@ data:
         style: "max-width: 1200px;"
     - title: Skins
       excerpt: TeXt has 6 built-in skins, you can also set up your own skin.
-      background_color: transparent
       image:
         src: /screenshots/TeXt-skins.png
         is_row: true
         full_width: true
         style: "max-width: 1000px;"
     - title: Enhanced User Experience
-      background_color: transparent
       children:
-        - title: Additional styles
-          excerpt: TeXt offer some CSS classes that you can use in the post, including alert, tag, image, button, etc.
+        - title: Additional Styles
+          excerpt: TeXt offer some CSS classes for your page, including alert, tag, image, button, etc.
           actions:
             - text: Learn More
               url: /docs/en/additional-styles
+        - title: Extensions
+          excerpt: Adding audios, videos, slides and demos to your page.
+          actions:
+            - text: Learn More
+              url: /docs/en/extensions
         - title: Markdown Enhancements
-          excerpt: You can easily add Mathjax, Mermaid and Charts in TeXt.
+          excerpt: Using Mathjax, Mermaid and Charts in your page.
           actions:
             - text: Learn More
               url: /docs/en/markdown-enhancements
@@ -66,11 +68,17 @@ data:
       excerpt: Free to use however you want under the MIT License. Clone it, fork it, customize it, whatever!
       actions:
         - text: '<i class="fab fa-github"></i> GitHub'
+          type: outline-theme-dark
           url: https://github.com/kitian616/jekyll-TeXt-theme
       background_color: "#515151"
     - title: Tip Me
-      background_color: transparent
       children:
+        - title: 'PayPal <i class="fas fa-arrow-down"></i>'
+          image:
+            src: /docs/assets/images/tip_paypal.jpg
+            url: https://www.paypal.me/kitian616
+            style: "max-width: 200px; max-height: 200px"
+            is_row: true
         - title: 'WeChat <i class="fas fa-arrow-down"></i>'
           image:
             src: /docs/assets/images/tip_wechat.jpg
@@ -81,10 +89,9 @@ data:
             src: /docs/assets/images/tip_alipay.jpg
             style: "max-width: 200px; max-height: 200px"
             is_row: true
-        - title: 'PayPal <i class="fas fa-arrow-down"></i>'
+        - title: 'Bitcoin <i class="fas fa-arrow-down"></i>'
           image:
-            src: /docs/assets/images/tip_paypal.png
-            url: https://www.paypal.me/kitian616
+            src: /docs/assets/images/3Fkufxcw2xd8HnaRJBNK4ccdtkUDyyNu4V.jpg
             style: "max-width: 200px; max-height: 200px"
-            is_row: true
+          content: '<code style="font-size: .65rem; word-break: break-all">3Fkufxcw2xd8HnaRJBNK4ccdtkUDyyNu4V</code>'
 ---

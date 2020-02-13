@@ -13,14 +13,11 @@ default:
   chart: false
   toc:
     selectors: 'h1,h2,h3'
-  sources: unpkg
+  sources: bootcdn
 
   page:
     mode: normal
     type: webpage
-    header:
-      type: normal
-      theme: light
     article_header:
       align: left
       theme: light
@@ -34,10 +31,13 @@ default:
     show_date: true
     show_tags: true
     show_author_profile: false
+    show_subscribe: false
     full_width: false
+    sharing: false
     comment: true
     license: false
     pageview: false
+    search: default
 
 sources:
   bootcdn:
