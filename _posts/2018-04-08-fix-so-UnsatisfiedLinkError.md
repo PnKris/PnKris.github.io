@@ -1,8 +1,6 @@
 ---
 title: Android APP运行时报so库加载失败
-categories: Android
-tags: [Android]
-date: 2018-04-08
+tags: Android
 ---
 
 遇到一个比较奇怪的bug：
