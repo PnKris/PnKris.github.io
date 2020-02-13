@@ -6,7 +6,6 @@
 
 <footer class="footer py-4 js-page-footer">
   <div class="main">
-    订阅测试
     {%- assign _site_author = site.author -%}
     {%- if _site_author.type == 'organization' -%}
       {%- assign _site_author_itemtype = 'http://schema.org/Organization' -%}
@@ -14,9 +13,6 @@
       {%- assign _site_author_itemtype = 'http://schema.org/Person' -%}
     {%- endif -%}
 
-    {%- if _show_subscribe -%}
-      <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
-    {%- endif -%}
     
     <div itemscope itemtype="{{ _site_author_itemtype }}">
       <meta itemprop="name" content="{{ _site_author.name }}">
@@ -35,6 +31,11 @@
     {%- assign _locale_copyright_dates = __return -%}
     <div class="site-info mt-2">
       <div>
+        
+        {%- if _show_subscribe -%}
+          <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
+        {%- endif -%}
+        
         {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
         {%- assign _locale_copyright_dates = __return -%}
         © {{ site.title }} {{ _locale_copyright_dates }},
