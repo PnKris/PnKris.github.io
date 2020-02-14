@@ -55,8 +55,17 @@
           </div>
         {%- endif -%}
         <div class="item__content">
-          <header><a href="{{ _article_url }}"><h2 itemprop="headline" class="item__header">{{ _article.title }}</h2></a></header>
-          <div class="item__description">
+
+          {%- if include.show_info -%}
+            {%- include snippets/assign.html target=site.data.variables.default.page.pageview
+              source0=_article.pageview -%}
+            {%- assign _show_pageview = __return -%}
+            {%- include article-info.html article=_article show_pageview=_show_pageview -%}
+          {%- endif -%}
+          <header><a href="{{ _article_url }}" style="font-weight: 400;"><span itemprop="headline"  class="item__header">{{ _article.title }}</span></a></header>
+
+
+          <!-- <div class="item__description">
             {%- if _article.excerpt and include.show_excerpt -%}
               <div class="article__content" itemprop="description articleBody">
                 {%- if _excerpt_type == 'html' -%}
@@ -69,7 +78,8 @@
             {%- if include.show_readmore -%}
               <p><a href="{{ _article_url }}">{{ _locale_readmore }}</a></p>
             {%- endif -%}
-          </div>
+          </div> -->
+          
           {%- if include.show_info -%}
             {%- include snippets/assign.html target=site.data.variables.default.page.pageview
               source0=_article.pageview -%}
