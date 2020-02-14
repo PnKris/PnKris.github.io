@@ -89,8 +89,10 @@ a > .item__header, a.item__header, .item__header > a {
 .items--divided {
   & > .item {
     &:not(:first-child) {
+      padding-top: 0.75rem;
     }
     &:not(:last-child) {
+      padding-bottom: 0.75rem;
       @include split-line(bottom);
     }
     list-style-type: none;
