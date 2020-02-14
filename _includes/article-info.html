@@ -62,6 +62,7 @@
 
           {%- if _show_date -%}
             <li>
+              <i class="fa fa-clock-o"></i>
               {%- include snippets/get-locale-string.html key='ARTICLE_DATE_FORMAT' -%}
               <span style="color:#aaa; font-weight:400; font-size:1rem/2;" >{{ include.article.date | date: __return }}</span>
             </li>
