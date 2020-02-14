@@ -47,7 +47,7 @@
             {%- assign _tag_path = __return -%}
             {%- assign _tag_encode = _tag | strip | url_encode } -%}
             <li>
-              <a style="color:#888; font-weight:400; font-size:1rem/2;"
+              <a style="color:#aaa; font-weight:400; font-size:1rem/2;"
                 href="{{ _tag_path | append: _tag_encode | replace: '//', '/' }}">{{ _tag }}</a>
             </li>
           {%- endfor -%}
@@ -63,7 +63,7 @@
           {%- if _show_date -%}
             <li>
               {%- include snippets/get-locale-string.html key='ARTICLE_DATE_FORMAT' -%}
-              <span style="color:#888; font-weight:400; font-size:1rem/2;" >{{ include.article.date | date: __return }}</span>
+              <span style="color:#aaa; font-weight:400; font-size:1rem/2;" >{{ include.article.date | date: __return }}</span>
             </li>
           {%- endif -%}
 

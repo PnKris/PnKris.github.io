@@ -39,7 +39,7 @@
       {%- if include.article_type == 'BlogPosting' -%}
         <article class="item" itemscope itemtype="http://schema.org/BlogPosting">
       {%- else -%}
-        <article class="item">
+        <article class="item" style="padding-top: 0; padding-bottom: 0;">
       {%- endif -%}
         {%- if _article.cover and include.show_cover-%}
           {%- include snippets/get-nav-url.html path=_article.cover -%}
@@ -79,7 +79,7 @@
               <p><a href="{{ _article_url }}">{{ _locale_readmore }}</a></p>
             {%- endif -%}
           </div> -->
-          
+
           <!-- {%- if include.show_info -%}
             {%- include snippets/assign.html target=site.data.variables.default.page.pageview
               source0=_article.pageview -%}
