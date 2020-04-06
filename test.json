@@ -1,0 +1,23 @@
+{
+    "retCd": 0,  
+    "retMsg": "string", 
+    "data": [
+        {
+            "id": 0, 
+            "name": "神印王座", 
+            "cover": "http://www.bequgew.com/files/article/image/93/93950/93950s.jpg", 
+            "cates": [
+                "玄幻"    
+            ], 
+            "tags": [
+                "标签"
+            ], 
+            "finishState": 1, 
+            "score": "10", 
+            "popVal": "2131", 
+            "hotVal": "1231", 
+            "fansVal": "1231", 
+            "desc": "很好看"
+        }
+    ]
+}
